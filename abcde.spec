@@ -50,8 +50,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr (-,root,root)
 %doc changelog README COPYING  TODO FAQ  examples/abcded examples/abcde.init examples/autorip.sh
 %{_bindir}/*
-%{_mandir}/man1/abcde.1.bz2
-%{_mandir}/man1/cd-discid.1.bz2
-%{_mandir}/man1/cddb-tool.1.bz2
+%{_mandir}/man1/abcde.*
+%{_mandir}/man1/cd-discid.*
+%{_mandir}/man1/cddb-tool.*
 %config(noreplace) %{_sysconfdir}/%{name}.conf
 
