@@ -1,6 +1,6 @@
 %define name abcde
-%define version 2.3.3
-%define release %mkrel 2
+%define version 2.3.99.6
+%define release %mkrel 1
 
 Summary:	Command-line utility to rip and encode audio cds
 Name:		%{name}
@@ -9,11 +9,12 @@ Release:	%{release}
 License:	GPL
 URL:		http://www.hispalinux.es/~data/files/
 Group:		Sound
-Source0:	%{URL}/%{name}_%{version}.orig.tar.bz2
+Source0:	http://ftp.de.debian.org/debian/pool/main/a/abcde/%{name}_%{version}.orig.tar.gz
 Source1:	%{URL}/cd-discid/cd-discid_0.9.orig.tar.bz2
-Patch0:		%{URL}/cd-discid_0.9-1.diff
+Patch1:		abcde-2.3.99.6-install.patch
+Patch2:		cd-discid-0.9-install.patch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
-Requires:	cdparanoia wget
+Requires:	cdparanoia wget vorbis-tools
 
 %description
 abcde is a frontend command-line utility (actually, a shell script) that
@@ -26,22 +27,19 @@ rm -rf $RPM_BUILD_ROOT
 
 %setup -q -b0
 %setup -q -b1
-%patch0 -p0
+%patch1 -p0
+cd ../cd-discid-0.9
+%patch2 -p0
+
 %build
 cd ../cd-discid-0.9
-%{__cc} cd-discid.c -o cd-discid
+%make
+
 %install
-install -D -m755 %{name}	$RPM_BUILD_ROOT%{_bindir}/%{name}
-install -D -m644 %{name}.1	$RPM_BUILD_ROOT%{_mandir}/man1/%{name}.1
-
-install -D -m755 cddb-tool	$RPM_BUILD_ROOT%{_bindir}/cddb-tool
-install -D -m644 cddb-tool.1	$RPM_BUILD_ROOT%{_mandir}/man1/cddb-tool.1
-
-install -D -m644 %{name}.conf	$RPM_BUILD_ROOT%{_sysconfdir}/%{name}.conf
+%makeinstall_std
 
 cd ../cd-discid-0.9
-install -D -m755 cd-discid	$RPM_BUILD_ROOT%{_bindir}/cd-discid
-install -D -m644 cd-discid.1	$RPM_BUILD_ROOT%{_mandir}/man1/cd-discid.1
+%makeinstall_std
 
 %clean
 rm -rf $RPM_BUILD_ROOT
