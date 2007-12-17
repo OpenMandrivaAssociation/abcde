@@ -13,7 +13,6 @@ Source0:	http://ftp.de.debian.org/debian/pool/main/a/abcde/%{name}_%{version}.or
 Source1:	%{URL}/cd-discid/cd-discid_0.9.orig.tar.bz2
 Patch1:		abcde-2.3.99.6-install.patch
 Patch2:		cd-discid-0.9-install.patch
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	cdparanoia wget vorbis-tools
 
 %description
