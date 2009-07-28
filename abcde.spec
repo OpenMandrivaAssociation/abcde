@@ -1,5 +1,5 @@
 %define name abcde
-%define version 2.3.99.6
+%define version 2.3.99.7
 %define release %mkrel 1
 
 Summary:	Command-line utility to rip and encode audio cds
