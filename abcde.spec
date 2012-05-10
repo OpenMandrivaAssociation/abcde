@@ -1,6 +1,6 @@
 %define name abcde
-%define version 2.4.2
-%define release %mkrel 1
+%define version 2.5.2
+%define release 1
 
 Summary:	Command-line utility to rip and encode audio cds
 Name:		%{name}
@@ -12,7 +12,6 @@ Group:		Sound
 Source0:	http://ftp.de.debian.org/debian/pool/main/a/abcde/%{name}_%{version}.orig.tar.gz
 Source1:	http://linukz.org/download/cd-discid-1.1.tar.gz
 Patch1:		abcde-2.3.99.6-install.patch
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	cdparanoia wget vorbis-tools
 
 %description
@@ -25,24 +24,19 @@ MPP/MP+(Musepack) format, and tags them, all in one go.
 
 %setup -q -b0
 %setup -q -b1
-%patch1 -p0
+#%patch1 -p0
 
 %build
 cd ../cd-discid-1.1
 %make
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
 cd ../cd-discid-1.1
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr (-,root,root)
 %doc changelog README COPYING TODO FAQ examples/abcded examples/abcde.init examples/autorip.sh
 %{_bindir}/*
 %{_mandir}/man1/abcde.*
