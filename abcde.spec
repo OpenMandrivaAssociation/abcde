@@ -1,5 +1,5 @@
 %define name abcde
-%define version 2.5.2
+%define version 2.5.3
 %define release 1
 
 Summary:	Command-line utility to rip and encode audio cds
