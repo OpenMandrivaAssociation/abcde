@@ -1,5 +1,5 @@
 %define name abcde
-%define version 2.5.3
+%define version 2.5.4
 %define release 1
 
 Summary:	Command-line utility to rip and encode audio cds
@@ -43,4 +43,3 @@ cd ../cd-discid-1.1
 %{_mandir}/man1/cd-discid.*
 %{_mandir}/man1/cddb-tool.*
 %config(noreplace) %{_sysconfdir}/%{name}.conf
-
