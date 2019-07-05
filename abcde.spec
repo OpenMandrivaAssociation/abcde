@@ -12,9 +12,11 @@ Group:		Sound
 Source0:	http://ftp.de.debian.org/debian/pool/main/a/abcde/%{name}_%{version}.orig.tar.gz
 Source1:	http://linukz.org/download/cd-discid-1.3.1.tar.gz
 Patch0:		abcde-2.3.99.6-install.patch
-Requires:	cdparanoia 
+Requires: cdparanoia 
 Requires: wget 
 Requires: vorbis-tools
+Requires: perl(MusicBrainz::DiscID)
+Requires: perl(WebService::MusicBrainz)
 
 %description
 abcde is a frontend command-line utility (actually, a shell script) that
