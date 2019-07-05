@@ -1,21 +1,22 @@
---- Makefile.orig	2007-10-04 12:07:36.000000000 +0800
-+++ Makefile	2007-10-04 12:08:38.000000000 +0800
-@@ -14,13 +14,13 @@
+--- abcde-2.9.3/Makefile.FIX_MAK	2019-02-07 15:21:37.735646896 +0200
++++ abcde-2.9.3/Makefile	2019-02-07 15:23:49.814404009 +0200
+@@ -1,14 +1,14 @@
+ abcde_version = abcde-2.9.3
+ INSTALL = /usr/bin/install -c
  
- install:
- 	$(INSTALL) -d -m 755 $(bindir)
--	$(INSTALL) -m 755 -o 0 abcde $(bindir)
--	$(INSTALL) -m 755 -o 0 cddb-tool $(bindir)
-+	$(INSTALL) -m 755 abcde $(bindir)
-+	$(INSTALL) -m 755 cddb-tool $(bindir)
- 	$(INSTALL) -d -m 755 $(mandir)
--	$(INSTALL) -m 644 -o 0 abcde.1 $(mandir)
--	$(INSTALL) -m 644 -o 0 cddb-tool.1 $(mandir)
-+	$(INSTALL) -m 644 abcde.1 $(mandir)
-+	$(INSTALL) -m 644 cddb-tool.1 $(mandir)
- 	$(INSTALL) -d -m 755 $(etcdir)
--	$(INSTALL) -m 644 -o 0 abcde.conf $(etcdir)
-+	$(INSTALL) -m 644 abcde.conf $(etcdir)
+-prefix = /usr/local
+-exec_prefix = $(prefix)
++prefix =
++exec_prefix = $(prefix)/usr
+ bindir = $(exec_prefix)/bin
+ sysconfdir = /etc
+-datarootdir = $(prefix)/share
+-docdir = $(datarootdir)/doc/$(abcde_version)
++datarootdir = $(prefix)/usr/share
++docdir = $(datarootdir)/doc/abcde
+ mandir = $(datarootdir)/man
+-DESTDIR =
++# DESTDIR =
  
- tarball:
- 	@cd .. && tar czvf abcde_$(VERSION).orig.tar.gz \
+ all:
+ 
