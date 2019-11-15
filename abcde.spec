@@ -1,3 +1,5 @@
+%global __requires_exclude perl\\((WebService::MusicBrainz)\\)
+
 %define name abcde
 %define version 2.9.3
 %define release 1
