@@ -4,7 +4,7 @@
 Summary:	Command-line utility to rip and encode audio cds
 Name:		abcde
 Version:	2.9.3
-Release:	3
+Release:	4
 License:	GPLv2
 URL:		https://abcde.einval.com
 Group:		Sound
