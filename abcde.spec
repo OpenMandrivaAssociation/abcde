@@ -4,7 +4,7 @@
 Summary:	Command-line utility to rip and encode audio cds
 Name:		abcde
 Version:	2.9.3
-Release:	4
+Release:	5
 License:	GPLv2
 URL:		https://abcde.einval.com
 Group:		Sound
@@ -14,17 +14,21 @@ Patch0:		abcde-2.3.99.6-install.patch
 Requires:	cd-discid
 Requires:	cdparanoia
 Requires:	wget
+Requires:	which
 Requires:	vorbis-tools
 Requires:	perl(MusicBrainz::DiscID)
 Requires:	perl(WebService::MusicBrainz)
+Recommends:	diffutils
 Recommends:	glyr
 Recommends:	flac
 Recommends:	lame
 Recommends:	mkcue
 Suggests:	cdrdao
 Suggests:	imagemagick
+Suggests:	mac
 Suggests:	normalize
 Suggests:	opus-tools
+Suggests:	ttaenc
 Suggests:	twolame
 Suggests:	vorbisgain
 Suggests:	wavpack
