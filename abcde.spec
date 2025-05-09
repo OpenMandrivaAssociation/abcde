@@ -35,6 +35,7 @@ BuildArch:	noarch
 
 %patchlist
 abcde-2.3.99.6-install.patch
+# https://src.fedoraproject.org/rpms/abcde/raw/rawhide/f/abcde-gnudb.patch
 abcde-gnudb.patch
 
 %description
